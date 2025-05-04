@@ -9,11 +9,7 @@ void stampaErrore(int tipo);
 int main(int argc, char *argv[])
 {
     /* directory delle named pipe tra gli utenti */
-    char pipe1[20] = "/tmpPipe/fifo1";
-    char pipe2[20] = "/tmpPipe/fifo2";
-    char pipe3[20] = "/tmpPipe/fifo3";
-    char pipe4[20] = "/tmpPipe/fifo4";
-    char pipe5[20] = "/tmpPipe/fifo5";
+    char *pipes[5] = {"/tmpPipe/fifo1", "/tmpPipe/fifo2", "/tmpPipe/fifo3", "/tmpPipe/fifo4", "/tmpPipe/fifo5"};
     
     /* named pipe per gli utenti */
     int fd1;
@@ -58,7 +54,7 @@ int main(int argc, char *argv[])
             exit(EXIT_FAILURE);
         }
 
-        
+
     }
     else
     /* processo padre che andrà ad occuparsi della trasmissione di un messaggio verso l'esterno */
